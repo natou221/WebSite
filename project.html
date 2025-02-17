@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les projets de Oumar SABALY : développement mobile, web et logiciel.">
+    <meta name="keywords" content="Oumar SABALY, projets, développement, applications, jeux">
+    <title>Projets - Portfolio Oumar SABALY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Oumar SABALY</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="experience.html">Expériences</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="project.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects">
+            <h1><i class="fas fa-code"></i> Mes Projets</h1>
+
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-button active" data-filter="all"><i class="fas fa-border-all"></i> Tous</button>
+                <button class="filter-button" data-filter="personnel"><i class="fas fa-user"></i> Personnels</button>
+                <button class="filter-button" data-filter="professionnel"><i class="fas fa-briefcase"></i> Professionnels</button>
+                <button class="filter-button" data-filter="stage"><i class="fas fa-graduation-cap"></i> Stage</button>
+            </div>
+
+            <!-- Grille des projets -->
+            <div class="project-grid">
+                
+                <!-- Projet 1 -->
+                <div class="project-card" data-category="stage">
+                    <img src="exotik.png" alt="Breizh-exotik" class="project-image">
+                    <div class="project-info">
+                        <h2>Breizh-exotik</h2>
+                        <p>Application de gestion d'une boutique exotik </p>
+                        <a href="breizh-exotik.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card" data-category="professionnel">
+                    <img src="javafs.png" alt="Java-FTP" class="project-image">
+                    <div class="project-info">
+                        <h2>Java-FTP</h2>
+                        <p>Application de transfert de fichiers sécurisé en Java.</p>
+                        <a href="java-ftp.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card" data-category="personnel">
+                    <img src="mistere.png" alt="Mystère en 4 Images" class="project-image">
+                    <div class="project-info">
+                        <h2>Mystère en 4 Images</h2>
+                        <p>Jeu interactif où l'utilisateur doit deviner un mystère à partir de 4 images.</p>
+                        <a href="mystere-4-images.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card" data-category="personnel">
+                    <img src="miam.png" alt="Miam Miam" class="project-image">
+                    <div class="project-info">
+                        <h2>Miam Miam</h2>
+                        <p>Application de gestion de commandes pour restaurants.</p>
+                        <a href="miam-miam.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="project-card" data-category="professionnel">
+                    <img src="mobilex.png" alt="Mobilex" class="project-image">
+                    <div class="project-info">
+                        <h2>Mobilex</h2>
+                        <p>Plateforme de gestion de mobilité pour les entreprises.</p>
+                        <a href="mobilex.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="project-card" data-category="personnel">
+                    <img src="space.png" alt="Space Invaders" class="project-image">
+                    <div class="project-info">
+                        <h2>Space Invaders</h2>
+                        <p>Jeu classique de type shoot 'em up revisité.</p>
+                        <a href="space-invador.html" class="project-link"><i class="fas fa-external-link-alt"></i> Pour plus details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Oumar SABALY - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour filtrer les projets avec une animation fluide
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.filter-button.active').classList.remove('active');
+        button.classList.add('active');
+        
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+            card.style.transition = 'opacity 0.3s ease-in-out';
+            card.style.opacity = (filter === 'all' || card.dataset.category === filter) ? '1' : '0';
+            setTimeout(() => {
+                card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+            }, 300);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
