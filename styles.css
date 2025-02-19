@@ -779,12 +779,12 @@ h2 {
 .social-profiles .cv-download {
     background: #28a745;
     color: white;
-    padding: 16px 8px; /* Taille réduite */
+    padding: 12px 8px; /* Taille réduite */
     font-size: 8px; /* Réduction de la police */
 }
 
 .social-profiles .cv-download i {
-    font-size: 16px; /* Réduction de l'icône */
+    font-size: 12px; /* Réduction de l'icône */
 }
 .filter-button:hover {
     background-color: #007bff;
